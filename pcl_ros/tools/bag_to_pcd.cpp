@@ -106,7 +106,7 @@ private:
       pcl_conversions::moveToPCL(pointcloud_msg, cloud);
 
       std::stringstream ss;
-      ss << output_directory_ << "/" << msg->recv_timestamp << ".pcd";
+      ss << output_directory_ << "/" << msg->time_stamp << ".pcd";
       RCLCPP_INFO(this->get_logger(), "Writing to: %s", ss.str().c_str());
       pcl::io::savePCDFile(ss.str(), cloud);
       break;
